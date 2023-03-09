@@ -6,12 +6,19 @@
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <s-scroll-list
+      :list-data="listData"
+      :content-render="renderFunction"
+      :style="{
+        width: '1000px',
+        height: '500px',
+        border: '1px solid transparent',
+      }"
+    ></s-scroll-list>
   </div>
-  <scroll-list :list-data="listData"></scroll-list>
 </template>
 
-<script setup>
-import scrollList from "./components/scrollList.vue";
+<script setup lang="jsx">
 import { reactive } from "vue";
 
 let listData = reactive([
@@ -49,19 +56,15 @@ let listData = reactive([
     title: "无缝滚动第十一行",
   },
 ]);
+
+function renderFunction(item) {
+  return (
+    <div>
+      <span>121314</span>
+      <span>{item.title}</span>
+    </div>
+  );
+}
 </script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style lang="less" scoped></style>
