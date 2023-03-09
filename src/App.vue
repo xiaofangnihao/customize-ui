@@ -1,21 +1,5 @@
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-    <s-scroll-list
-      :list-data="listData"
-      :content-render="renderFunction"
-      :style="{
-        width: '1000px',
-        height: '500px',
-        border: '1px solid transparent',
-      }"
-    ></s-scroll-list>
-  </div>
+  <div></div>
 </template>
 
 <script setup lang="jsx">
